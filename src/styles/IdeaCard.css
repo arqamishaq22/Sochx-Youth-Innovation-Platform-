@@ -1,0 +1,370 @@
+/* ==============================================================================
+   SochX Idea Card & Author Context Menu Styling (IdeaCard.css)
+   Pure CSS - Dark/Purple/Cyan Theme Matching
+   ============================================================================== */
+
+/* Wrapper for anchored dropdown positioning */
+.idea-menu-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Three-dots icon trigger button */
+.idea-menu-trigger-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #64748b;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.idea-menu-trigger-btn:hover {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+  border-color: #e9d5ff;
+}
+
+.idea-menu-trigger-btn.active {
+  background-color: #e9d5ff;
+  color: #581c87;
+  border-color: #c084fc;
+  box-shadow: 0 0 0 2px rgba(107, 33, 168, 0.15);
+}
+
+/* Floating Dropdown Menu Card */
+.idea-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 165px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12),
+              0 8px 10px -6px rgba(15, 23, 42, 0.08);
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  animation: ideaDropdownSlide 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top right;
+}
+
+@keyframes ideaDropdownSlide {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Menu items */
+.idea-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.idea-dropdown-item:hover {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.idea-dropdown-item.danger {
+  color: #ef4444;
+}
+
+.idea-dropdown-item.danger:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.idea-dropdown-divider {
+  height: 1px;
+  background: #f1f5f9;
+  margin: 4px 0;
+}
+
+.idea-dropdown-restricted {
+  padding: 8px 10px;
+  min-width: 180px;
+}
+
+/* ==============================================================================
+   EDIT IDEA MODAL DIALOG (SMOOTH SCROLLING & FIXED FOOTER)
+   ============================================================================== */
+
+.edit-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  animation: editBackdropFade 0.2s ease-out;
+}
+
+@keyframes editBackdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.edit-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  width: 100%;
+  max-width: 620px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: auto;
+  animation: editModalZoom 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes editModalZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.edit-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  background: linear-gradient(135deg, #fbfbfe 0%, #f5f3ff 100%);
+  flex-shrink: 0;
+}
+
+.edit-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-modal-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6b21a8 0%, #06b6d4 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(107, 33, 168, 0.2);
+}
+
+.edit-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin: 0;
+}
+
+.edit-modal-close-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.edit-modal-close-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Form flex container with scrollable body and pinned footer */
+.edit-modal-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.edit-modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.edit-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.edit-modal-body::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.edit-modal-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.edit-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.edit-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-input,
+.edit-select,
+.edit-textarea {
+  width: 100%;
+  padding: 9px 13px;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 13.5px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.edit-input:focus,
+.edit-select:focus,
+.edit-textarea:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.edit-textarea {
+  resize: vertical;
+  min-height: 75px;
+  line-height: 1.5;
+}
+
+.edit-modal-footer {
+  padding: 14px 24px;
+  border-top: 1px solid #f1f5f9;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.edit-btn-cancel {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn-cancel:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.edit-btn-save {
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  transition: all 0.2s ease;
+}
+
+.edit-btn-save:hover:not(:disabled) {
+  background: linear-gradient(135deg, #6d28d9 0%, #3b0764 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
+}
+
+.edit-btn-save:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Error banner inside modal */
+.edit-error-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ur">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SochX - Complete Project Documentation</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 15mm 18mm 15mm;
+
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      font-size: 13.5px;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    .cover {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+      color: #ffffff;
+      padding: 40px 35px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(30, 27, 75, 0.2);
+    }
+
+    .cover h1 {
+      font-size: 28px;
+      margin: 0 0 8px 0;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+    }
+
+    .cover .subtitle {
+      font-size: 15px;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .cover .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 15px;
+      color: #94a3b8;
+    }
+
+    .cover .meta span {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #f1f5f9;
+    }
+
+    h2 {
+      font-size: 19px;
+      color: #1e1b4b;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 30px;
+      margin-bottom: 14px;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 15px;
+      color: #334155;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin: 0 0 10px 0;
+      text-align: justify;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 14px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 20px 0;
+      font-size: 12.5px;
+      page-break-inside: avoid;
+    }
+
+    th,
+    td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f8fafc;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 4px;
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .badge-green {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .box {
+      background: #f8fafc;
+      border-left: 4px solid #6366f1;
+      padding: 12px 16px;
+      margin: 14px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+    }
+
+    .box-warning {
+      border-left-color: #f59e0b;
+      background: #fffbeb;
+    }
+
+    .box-success {
+      border-left-color: #10b981;
+      background: #f0fdf4;
+    }
+
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 12px 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: 12px 0 16px 0;
+      page-break-inside: avoid;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .footer-note {
+      margin-top: 35px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 12px;
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- COVER SECTION -->
+  <div class="cover">
+    <h1>SochX: Where Ideas Go Live</h1>
+    <div class="subtitle">Mukammal Project Architecture, Tech Stack aur Implementation Guide</div>
+    <div class="meta">
+      <span><strong>Project Type:</strong> Full-Stack Web Application (MERN / PERN / MySQL)</span>
+      <span><strong>Frontend:</strong> React 19 + Vite</span>
+      <span><strong>Backend:</strong> Node.js + Express.js</span>
+      <span><strong>Database:</strong> MySQL (XAMPP / MariaDB)</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: INTRODUCTION -->
+  <h2>1. Project ka Maqsad (Overview & Problem Solved)</h2>
+  <p>
+    <strong>SochX</strong> ek mukammal aur modern Full-Stack platform hai jo students, innovators aur professionals ko
+    apne creative ideas, startup proposals aur social/tech issues ke solutions share karne ki sahulat deta hai.
+  </p>
+  <ul>
+    <li><strong>Crowdsourced Innovation:</strong> Log apne ideas categorize kar ke post kar sakte hain (jaise
+      Technology, Education, Health, Business, Social, Sustainability).</li>
+    <li><strong>Community Engagement:</strong> Doosre users in ideas ko parh sakte hain aur <strong>Upvote</strong> de
+      kar unhein promote kar sakte hain.</li>
+    <li><strong>Strict Moderation:</strong> Admin panel har idea ko verify karta hai aur misuse ya low-quality content
+      ko rokne ke liye <strong>Approve</strong> ya <strong>Reject</strong> karta hai.</li>
+    <li><strong>Role-Based Security:</strong> Admins aur normal users ke darmiyan wazeh farq rakha gaya hai taake
+      unauthorized access na ho sake.</li>
+  </ul>
+
+  <!-- SECTION 2: SYSTEM ARCHITECTURE -->
+  <h2>2. System Architecture & Request Lifecycle</h2>
+  <p>
+    Project ko 3-tier architecture par banaya gaya hai jisme Client, Server aur Database alag alag responsibilities
+    sambhalte hain:
+  </p>
+  <pre>
+[ React Frontend (Client - Port 5173) ]
+         │  HTTP Request (Axios) + JWT Token
+         ▼
+[ Express.js Server (Backend API - Port 5000) ]
+         │  CORS + JSON Body Parser Middleware
+         ▼
+[ Authentication Middleware (JWT Verification) ]
+         │  Valid Token -> req.user attach
+         ▼
+[ Controller (e.g. ideaController / authController) ]
+         │  Business Rules + ACID Transaction
+         ▼
+[ MySQL Connection Pool (mysql2/promise) ]
+         │  Parameterized Prepared SQL Queries
+         ▼
+[ Database: sochx_db (Tables: users, ideas, idea_upvotes, comments) ]
+  </pre>
+
+  <!-- SECTION 3: TECH STACK & PACKAGES -->
+  <h2>3. Kon Si Cheezein Use Hui Hain Aur Kyun Use Hui Hain?</h2>
+
+  <h3>A. Frontend (React 19 + Vite)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Tool / Library</th>
+        <th style="width: 25%;">Folder / File</th>
+        <th>Istemal ki Wajah (Purpose & Reason)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>React 19</strong></td>
+        <td><code>src/</code></td>
+        <td>Fast, responsive aur component-driven UI banane ke liye. Page reload hue baghair UI live update hoti hai.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Vite</strong></td>
+        <td><code>vite.config.js</code></td>
+        <td>Modern build tool aur development server. Iski Hot Module Replacement (HMR) bohot tez hai.</td>
+      </tr>
+      <tr>
+        <td><strong>React Router Dom (v7)</strong></td>
+        <td><code>src/App.jsx</code></td>
+        <td>Single Page Application (SPA) routing ke liye. <code>/</code>, <code>/ideas</code>,
+          <code>/submit-idea</code>, <code>/profile</code>, <code>/admin</code> par navigate karne ke liye.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Axios</strong></td>
+        <td><code>src/services/api.js</code></td>
+        <td>Backend REST API se communication ke liye. Isme centralized interceptors hain jo JWT token khud attach karte
+          hain.</td>
+      </tr>
+      <tr>
+        <td><strong>Lucide React</strong></td>
+        <td><code>src/components/</code></td>
+        <td>Modern, lightweight icons (Thumbs up, Trash, Search, Filters, User profile icons) ke liye.</td>
+      </tr>
+      <tr>
+        <td><strong>Tailwind CSS</strong></td>
+        <td><code>tailwind.config.js</code></td>
+        <td>Responsive layout, badges, card animations aur professional dark/light theme ke liye.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h3>B. Backend (Node.js + Express + MySQL)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Package / Tool</th>
+        <th style="width: 25%;">Folder / File</th>
+        <th>Istemal ki Wajah (Purpose & Reason)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Express.js</strong></td>
+        <td><code>backend/server.js</code></td>
+        <td>REST API server create karne aur HTTP requests (GET, POST, PUT, DELETE) handle karne ke liye.</td>
+      </tr>
+      <tr>
+        <td><strong>MySQL2 (Promise)</strong></td>
+        <td><code>backend/config/db.js</code></td>
+        <td>Asynchronous queries aur Connection Pool manage karne ke liye taake server heavy load par crash na ho.</td>
+      </tr>
+      <tr>
+        <td><strong>JSON Web Token (JWT)</strong></td>
+        <td><code>backend/middleware/</code></td>
+        <td>Stateless authentication ke liye. Login hone par client ko secure token diya jata hai jo user ki identity
+          verify karta hai.</td>
+      </tr>
+      <tr>
+        <td><strong>Bcrypt.js</strong></td>
+        <td><code>authController.js</code></td>
+        <td>Passwords ko secure salt (10 rounds) ke sath hash banane ke liye taake database me plain passwords na
+          jayein.</td>
+      </tr>
+      <tr>
+        <td><strong>CORS</strong></td>
+        <td><code>backend/server.js</code></td>
+        <td>Port 5173 (Frontend) ko Port 5000 (Backend) ke resources access karne ki ijazat dene ke liye.</td>
+      </tr>
+      <tr>
+        <td><strong>Dotenv</strong></td>
+        <td><code>backend/.env</code></td>
+        <td>Sensitive environment variables (Database password, Port, JWT secret) ko code se alag mehfooz rakhne ke
+          liye.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4: DATABASE DESIGN -->
+  <h2>4. Database Design & Tables Structure (sochx_db)</h2>
+  <p>
+    Database me 4 relational tables banayi gayi hain jisme foreign keys aur indexing shamil hai:
+  </p>
+
+  <ol>
+    <li>
+      <strong>users Table:</strong> Users ke accounts, role (<code>'admin'</code> ya <code>'user'</code>), hashed
+      passwords, role badges aur bio ko store karti hai.
+    </li>
+    <li>
+      <strong>ideas Table:</strong> Idea ka title, problem description, proposed solution, category, submitter info,
+      status (<code>'Pending'</code>, <code>'Approved'</code>, <code>'Rejected'</code>), aur upvotes count rakhti hai.
+    </li>
+    <li>
+      <strong>idea_upvotes Table:</strong> Isme <code>UNIQUE KEY (ideaId, userId)</code> lagaya gaya hai. Yeh database
+      level par guarantee karta hai ke <strong>1 user sirf 1 baar upvote kar sake</strong>.
+    </li>
+    <li>
+      <strong>comments Table:</strong> Ideas par hone wali discussion aur feedback messages ko user information ke sath
+      link karti hai.
+    </li>
+  </ol>
+
+  <!-- SECTION 5: STEP-BY-STEP WORKFLOW -->
+  <h2>5. Step-by-Step Kaam Kaise Chalta Hai (Workflow)</h2>
+
+  <div class="box">
+    <strong>Step 1: User Registration & Authentication</strong><br>
+    User apna naam, email, username aur password enter karta hai. Backend me password <code>bcrypt.hash()</code> ke
+    zariye encrypt hota hai aur MySQL me save hota hai. Login hone par JWT token generate ho kar frontend ko milta hai
+    jo <code>localStorage</code> me save hota hai.
+  </div>
+
+  <div class="box">
+    <strong>Step 2: Ideas Feed & Live Search</strong><br>
+    User <code>/ideas</code> page par categories (Technology, Health, Education, Business, Social, Sustainability)
+    select kar sakta hai. Search bar me text likhte hi backend dynamic SQL query chalata hai:
+    <code>WHERE (title LIKE ? OR problemDescription LIKE ?) AND category = ?</code>
+  </div>
+
+  <div class="box">
+    <strong>Step 3: New Idea Submission</strong><br>
+    User <code>/submit-idea</code> par apna naya concept submit karta hai. Idea default taur par
+    <strong>"Pending"</strong> status me chala jata hai taake admin approval ke baghair feed me spam na aaye.
+  </div>
+
+  <div class="box box-success">
+    <strong>Step 4: Upvoting System (Concurrency Safe)</strong><br>
+    Jab user Thumbs Up click karta hai, to backend SQL Transaction (<code>connection.beginTransaction()</code> aur
+    <code>FOR UPDATE</code>) use karta hai. Agar pehle se voted hai to vote remove ho jata hai (unlike), warna vote
+    insert hota hai aur count barh jata hai.
+  </div>
+
+  <div class="box box-warning">
+    <strong>Step 5: Admin Moderation Panel (Protected)</strong><br>
+    Sirf Admin role wale users <code>/admin</code> access kar sakte hain. Frontend ka <code>AdminRoute</code> component
+    unko protect karta hai. Admin wahan se live metrics dekh sakta hai, ideas ko Approve/Reject kar sakta hai aur users
+    ko manage kar sakta hai.
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 6: HOW TO RUN -->
+  <h2>6. Project ko Run Karne ka Mukammal Tarika</h2>
+
+  <h3>1. XAMPP Server Setup</h3>
+  <ul>
+    <li>XAMPP Control Panel open karein aur <strong>Apache</strong> aur <strong>MySQL</strong> start karein.</li>
+    <li>Browser me <code>http://localhost/phpmyadmin</code> open karein.</li>
+    <li>Database ka naam <code>sochx_db</code> rakhein aur <code>sochx_db.sql</code> file ko import karein.</li>
+  </ul>
+
+  <h3>2. Backend Start Karna</h3>
+  <pre>
+cd backend
+npm install
+npm run dev
+# Server http://localhost:5000 par start ho jayega
+  </pre>
+
+  <h3>3. Frontend Start Karna</h3>
+  <pre>
+# Project root directory me
+npm install
+npm run dev
+# Frontend http://localhost:5173 par live ho jayega
+  </pre>
+
+  <!-- SECTION 7: DEFAULT ACCOUNTS -->
+  <h2>7. Testing ke Liye Pre-configured Accounts</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Email Address</th>
+        <th>Password</th>
+        <th>Access Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge">Admin</span></td>
+        <td><code>arqam@sochx.com</code></td>
+        <td><code>Admin@123</code></td>
+        <td>Admin Dashboard, Approve/Reject Ideas, User Management</td>
+      </tr>
+      <tr>
+        <td><span class="badge">Admin</span></td>
+        <td><code>faryal@sochx.com</code></td>
+        <td><code>Lead@123</code></td>
+        <td>Co-Founder / Admin Permissions</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-green">Standard User</span></td>
+        <td><code>hamza@sochx.com</code></td>
+        <td><code>User@123</code></td>
+        <td>Submit Ideas, Upvote, Profile Edit, Public Feed</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-note">
+    SochX Project Documentation &bull; Generated for University Project Evaluation & Engineering Review &bull; 2026
+  </div>
+
+</body>
+
+</html>

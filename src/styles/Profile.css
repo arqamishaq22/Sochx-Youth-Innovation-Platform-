@@ -1,0 +1,377 @@
+/* ==========================================================================
+   SOCHX - USER PROFILE PAGE STYLING (Profile.css)
+   Clean, pure Vanilla CSS without Tailwind CSS
+   ========================================================================== */
+
+.profile-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+  padding-bottom: 80px;
+}
+
+/* 1. PROFILE HEADER BANNER (Deep Purple Background) */
+.profile-header-banner {
+  background: linear-gradient(135deg, #3b0764 0%, #4c1d95 50%, #581c87 100%);
+  color: #ffffff;
+  padding: 60px 24px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(59, 7, 100, 0.2);
+}
+
+.profile-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.profile-user-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Circular user avatar with cyan glowing ring border */
+.profile-avatar-ring {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 4px;
+  border: 3.5px solid #22d3ee;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e1b4b 0%, #6d28d9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.profile-user-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-user-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.profile-full-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.profile-role-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: rgba(34, 211, 238, 0.2);
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  color: #67e8f9;
+}
+
+.profile-bio-statement {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e9d5ff;
+  max-width: 450px;
+  margin: 0;
+}
+
+.profile-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 6px;
+  transition: all 0.2s ease;
+}
+
+.profile-edit-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Right Section: 3 Stats Badges */
+.profile-stats-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.profile-stat-badge {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 16px 22px;
+  text-align: center;
+  min-width: 95px;
+}
+
+.profile-stat-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+  line-height: 1;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.profile-stat-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* 2. PROFILE TABS & BODY */
+.profile-body-wrap {
+  max-width: 900px;
+  margin: 36px auto 0 auto;
+  padding: 0 24px;
+}
+
+.profile-tabs-nav {
+  display: flex;
+  gap: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+}
+
+.profile-tab-btn {
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  background-color: #f1f5f9;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-tab-btn:hover {
+  background-color: #e2e8f0;
+  color: #1e1b4b;
+}
+
+.profile-tab-btn.active {
+  background-color: #4c1d95;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(76, 29, 149, 0.25);
+}
+
+/* Overview Tab: White card with cyan left vertical accent bar titled "About Me" */
+.profile-accent-card-cyan {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid #06b6d4; /* Cyan left vertical accent bar */
+  padding: 32px 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.profile-section-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin: 0 0 12px 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.profile-section-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 20px 0;
+}
+
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+}
+
+.profile-detail-item {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.profile-detail-item strong {
+  color: #1e293b;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+/* My Ideas Tab: White card titled "My Recent Ideas" with yellow "Pending" pill badge */
+.profile-idea-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 14px;
+  transition: all 0.2s ease;
+}
+
+.profile-idea-item:hover {
+  background-color: #ffffff;
+  border-color: #c4b5fd;
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.06);
+}
+
+.profile-idea-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin: 0 0 4px 0;
+}
+
+.profile-idea-date {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.profile-badge-pending {
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.profile-badge-approved {
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+/* Settings Tab: White card titled "Account Settings" with outlined Change Password & red outline Logout */
+.profile-settings-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  margin-top: 16px;
+}
+
+.profile-btn-outlined-purple {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background-color: transparent;
+  border: 1.5px solid #4c1d95;
+  color: #4c1d95;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.profile-btn-outlined-purple:hover {
+  background-color: #f5f3ff;
+}
+
+.profile-btn-outlined-red {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background-color: transparent;
+  border: 1.5px solid #ef4444;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.profile-btn-outlined-red:hover {
+  background-color: #fee2e2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-user-left {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-user-name-row {
+    justify-content: center;
+  }
+
+  .profile-edit-btn {
+    margin: 8px auto 0 auto;
+  }
+
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

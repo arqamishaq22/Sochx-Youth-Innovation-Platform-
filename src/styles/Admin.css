@@ -1,0 +1,347 @@
+/* ==========================================================================
+   SOCHX - ADMIN DASHBOARD STYLING (Admin.css)
+   Pure Vanilla CSS matching SochX purple / cyan theme
+   ========================================================================== */
+
+.admin-container {
+  min-height: 90vh;
+  background-color: #f8fafc;
+  padding-bottom: 80px;
+}
+
+/* 1. Header Banner */
+.admin-hero-banner {
+  background: linear-gradient(135deg, #3b0764 0%, #4c1d95 60%, #06b6d4 120%);
+  padding: 48px 24px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(59, 7, 100, 0.4);
+}
+
+.admin-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(34, 211, 238, 0.15) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.admin-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-badge-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #22d3ee;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.admin-banner-title {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.admin-banner-subtitle {
+  font-size: 15px;
+  color: #e2e8f0;
+  margin: 0 0 24px 0;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+/* 2. Metric Cards Grid */
+.admin-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.admin-metric-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.admin-metric-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.admin-metric-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.admin-metric-num {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.admin-metric-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  letter-spacing: 0.8px;
+  margin: 4px 0 0 0;
+}
+
+/* 3. Dashboard Body & Tabs */
+.admin-content-wrap {
+  max-width: 1200px;
+  margin: -24px auto 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.admin-tabs-nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.admin-tab-btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.admin-tab-btn:hover {
+  color: #4c1d95;
+  border-color: #c4b5fd;
+}
+
+.admin-tab-btn.active {
+  background: #4c1d95;
+  color: #ffffff;
+  border-color: #4c1d95;
+  box-shadow: 0 8px 16px -4px rgba(76, 29, 149, 0.35);
+}
+
+/* 4. Table Card Container */
+.admin-table-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.admin-table-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admin-table-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin: 0;
+}
+
+.admin-table-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 4px 0 0 0;
+}
+
+.admin-table-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.admin-table th {
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  padding: 14px 20px;
+  border-bottom: 1.5px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+  background-color: #faf5ff;
+}
+
+/* Badges */
+.admin-status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-status-pending {
+  background-color: #fef9c3;
+  color: #a16207;
+  border: 1px solid #fef08a;
+}
+
+.admin-status-approved {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.admin-status-inactive {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.admin-role-admin {
+  background-color: #ede9fe;
+  color: #6d28d9;
+  border: 1px solid #ddd6fe;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-role-user {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.admin-actions-cell {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.admin-btn-action {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.admin-btn-approve {
+  background: #10b981;
+  color: #ffffff;
+}
+.admin-btn-approve:hover {
+  background: #059669;
+}
+
+.admin-btn-inactive {
+  background: #f59e0b;
+  color: #ffffff;
+}
+.admin-btn-inactive:hover {
+  background: #d97706;
+}
+
+.admin-btn-delete {
+  background: #ef4444;
+  color: #ffffff;
+}
+.admin-btn-delete:hover {
+  background: #dc2626;
+}
+
+/* Empty state */
+.admin-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .admin-hero-banner {
+    padding: 36px 16px;
+  }
+  .admin-banner-title {
+    font-size: 26px;
+  }
+  .admin-content-wrap {
+    padding: 0 16px;
+  }
+  .admin-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

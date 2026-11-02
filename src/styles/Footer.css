@@ -1,0 +1,217 @@
+/* ==========================================================================
+   SOCHX - FOOTER STYLING (Footer.css)
+   Horizontal multi-column line-wise layout matching the reference design
+   Preserving SochX colors, typography, and visual identity
+   ========================================================================== */
+
+.site-footer {
+  width: 100%;
+  background-color: #e8e9ee;
+  color: #1e293b;
+  padding-top: 44px;
+  padding-bottom: 24px;
+  margin-top: auto;
+  border-top: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+/* Horizontal Line-wise Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 0.85fr 1fr 1.45fr;
+  gap: 32px;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+
+/* Column 1: Brand */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000000;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.footer-brand-x {
+  background: linear-gradient(135deg, #10b981 0%, #7c3aed 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.footer-brand-tagline {
+  color: #7026b9;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.footer-brand-desc {
+  color: #64748b;
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 290px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Nav Columns (Platform, Company, Resources) */
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 18px 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.2px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.footer-link:hover {
+  color: #7026b9;
+}
+
+/* Column 5: Contact */
+.footer-contact-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-address-block {
+  margin-bottom: 8px;
+}
+
+.footer-contact-subtitle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.footer-contact-subtitle {
+  color: #0d9488;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.footer-contact-address {
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.footer-contact-inner-divider {
+  border-top: 1px solid #cbd5e1;
+  margin: 10px 0;
+  width: 90%;
+}
+
+.footer-contact-direct-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.footer-contact-icon {
+  color: #0d9488;
+  flex-shrink: 0;
+}
+
+.footer-contact-link {
+  text-decoration: none;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.footer-contact-link:hover {
+  color: #7026b9;
+}
+
+/* Horizontal Lavender Divider Line */
+.footer-divider {
+  border: none;
+  border-top: 1.5px solid #8b5cf6;
+  opacity: 0.55;
+  width: 100%;
+  margin: 0 0 16px 0;
+}
+
+/* Bottom Center Copyright */
+.footer-copyright {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .footer-brand-desc {
+    max-width: 100%;
+  }
+
+  .footer-contact-inner-divider {
+    width: 100%;
+  }
+}

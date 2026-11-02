@@ -1,0 +1,185 @@
+/* ==========================================================================
+   SOCHX - SUBMIT IDEA PAGE STYLING (SubmitIdea.css)
+   Clean, pure Vanilla CSS without Tailwind CSS
+   ========================================================================== */
+
+.submit-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3b0764 0%, #4c1d95 50%, #581c87 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px 80px 24px;
+  position: relative;
+}
+
+/* Subtle background chat-bubble pattern */
+.submit-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(34, 211, 238, 0.08) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Centered White Card */
+.submit-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  max-width: 680px;
+  width: 100%;
+  padding: 44px 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  border-top: 5px solid #06b6d4;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.submit-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.submit-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #3b0764;
+  margin: 0 0 8px 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.submit-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Section Field Groups */
+.submit-form-section {
+  margin-bottom: 28px;
+}
+
+.submit-section-heading {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #4c1d95;
+  border-bottom: 1.5px solid #f1f5f9;
+  padding-bottom: 8px;
+  margin: 0 0 18px 0;
+}
+
+.submit-input-group {
+  margin-bottom: 16px;
+}
+
+.submit-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.submit-input,
+.submit-textarea,
+.submit-select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #cbd5e1;
+  background-color: #f8fafc;
+  font-size: 14px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.submit-input:focus,
+.submit-textarea:focus,
+.submit-select:focus {
+  border-color: #4c1d95;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(76, 29, 149, 0.12);
+}
+
+/* Native browser required-field validation styling */
+.submit-input:invalid:focus,
+.submit-textarea:invalid:focus {
+  border-color: #ef4444;
+}
+
+.submit-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.submit-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Full-width Purple Button: Submit Idea */
+.submit-submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background-color: #4c1d95;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(76, 29, 149, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.submit-submit-btn:hover {
+  background-color: #3b0764;
+  box-shadow: 0 6px 18px rgba(76, 29, 149, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Success Card */
+.submit-success-card {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.submit-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #ecfdf5;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  font-size: 32px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .submit-card {
+    padding: 32px 20px;
+  }
+
+  .submit-two-cols {
+    grid-template-columns: 1fr;
+  }
+}
